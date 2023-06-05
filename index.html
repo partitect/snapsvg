@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Snap.svg</title>
+        <style>
+        body {
+            background: #333;
+        }
+        </style>
+		<script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+		<script src="d3.min.js"></script>
+        <script src="snap.svg-min.js"></script>
+		<script src="jquery.drawsvg.js"></script>
+		
+    </head>
+    <body>
+        
+<script type="text/javascript">
+       var s = Snap("#svg");
+
+
+       s = Snap(1170, 600);
+       s.attr({ viewBox: "0 0 1000 600", "class": "svv" });
+       var bigCircle = s.circle();
+
+
+    
+
+
+       bigCircle.attr({
+           cx: 500,
+           cy: 250,
+           r: 100,
+           fill: "#013f64",
+           stroke: "#fff",
+           strokeWidth: 5, "class": "bigc"
+       }).animate({
+           r: 200,
+       }, 1000,mina.elastic);
+       
+
+
+	
+	d3.select("body").transition()
+    .style("background-color", "yellow");
+	
+	
+       var smallCircle = s.circle();
+       smallCircle.attr({
+           cx: 500,
+           cy: 250,
+           r: 20,
+           fill: "#fff",
+           stroke: "#013f64",
+           strokeWidth: 5,
+           
+       }).animate({
+           r: 210,
+       }, 1000,mina.elastic);
+
+
+       var smallCircle2 = s.circle();
+       smallCircle2.attr({
+           r: 20,
+           cx: 500,
+           cy: 250,
+           fill: "#013f64",
+           stroke: "#fff",
+           strokeWidth: 1,
+
+       }).animate({
+          
+           r: 205,
+         
+       }, 1000,mina.elastic);
+
+       var smallCircle3 = s.circle();
+       smallCircle3.attr({
+           
+           cx: 500,
+           cy: 250,
+           r:20,
+         
+           stroke: "#013f64",
+           strokeWidth: 10,
+       }).animate({
+         
+           r: 160,
+             fill: "#fff",
+       }, 1000,mina.easeIn);
+
+
+	 
+
+
+       var line = s.line();
+
+       line.attr({
+           stroke: "#026fb0",
+           strokeWidth: 10,
+           transform: "t500,150s"
+
+       }).animate({ x1:-3,
+		   x2:25,
+		   y1:0,
+		   y2:25,}, 1000);;
+
+       var line1 = s.line();
+
+       line1.attr({
+           stroke: "#026fb0",
+           strokeWidth: 10,
+           transform: "t500,150s"
+
+
+       }).animate({ x1:3,
+		   x2:-25,
+		   y1:0,
+		   y2:25,}, 1000);;
+
+
+
+
+       var line4 = s.line();
+
+       line4.attr({
+           stroke: "#013f64",
+           strokeWidth: 10,
+           transform: "t467,180s"
+
+       }).animate({ x1:-3,
+		   x2:145,
+		   y1:0,
+		   y2:145,}, 1000);;
+
+       var line5 = s.line();
+
+       line5.attr({
+           stroke: "#013f64",
+           strokeWidth: 10,
+           transform: "t467,180s"
+
+
+       }).animate({ x1:3,
+		   x2:-110,
+		   y1:0,
+		   y2:110,}, 1000);;
+
+       var line6 = s.line();
+
+       line6.attr({
+           stroke: "#013f64",
+           strokeWidth: 10,
+           transform: "t534,180s"
+
+       }).animate({ x1:-3,
+		   x2:110,
+		   y1:0,
+		   y2:110,}, 1000);;
+
+       var line7 = s.line();
+
+       line7.attr({
+           stroke: "#013f64",
+           strokeWidth: 10,
+           transform: "t534,180s"
+
+
+       }).animate({ x1:3,
+		   x2:-145,
+		   y1:0,
+		   y2:145,}, 1000);;
+
+       var line2 = s.line();
+
+       line2.attr({
+           stroke: "#026fb0",
+           strokeWidth: 10,
+           transform: "t500,180s"
+
+       }).animate({ x1:-3,
+		   x2:128,
+		   y1:0,
+		   y2:128,}, 1000);;
+       var line3 = s.line();
+
+       line3.attr({
+           stroke: "#026fb0",
+           strokeWidth: 10,
+           transform: "t500,180s"
+
+
+       }).animate({ x1:3,
+		   x2:-128,
+		   y1:0,
+		   y2:128,}, 1000);;
+
+
+      var line8 = s.line();
+
+       line8.attr({
+           stroke: "#013f64",
+           strokeWidth: 10,
+		   transform: "t500,245s"
+          
+       }).animate({ x1:-3,
+		   x2:96,
+		   y1:0,
+		   y2:96,}, 1000);
+		var line9 = s.line();
+
+       line9.attr({
+           stroke: "#013f64",
+          
+		   transform: "t500,245s",
+		   strokeWidth: 10,
+
+       }).animate({ x1:3,
+		   x2:-96,
+		   y1:0,
+		   y2:96,}, 1000);
+
+       var tar = s.text(500, 350, ["2007"]);
+       tar.attr({
+           fill: "#013f64",
+           "font-size": "1.2em",
+           "letter-spacing": 2,
+           "font-weight": "bold",
+
+           'text-anchor': 'middle',
+
+
+       });
+       Snap.animate(0, 2007, function (value) {
+           tar.attr({ text: Math.round(value) });
+       }, 1000);
+
+       var g = s.group(line, line1, line2, line3, line4, line5, line6, line7, line8, line9);
+       g.attr({
+           opacity: 0
+       })
+       g.animate({ 'opacity': 1 }, 1000);
+
+
+
+
+
+       var t = s.text(300, 0, ["ÇANKIRI KARATEKİN ÜNİVERSİTESİ"]);
+       t.attr({
+           fill: "#fff",
+           "font-size": "1.8em",
+           "letter-spacing": 2,
+           "font-weight": "bold",
+           textpath: "M500,250 m-192, 0 a192,192 0 1,0 384,0 a192,192 0 1,0 -384,0Z",
+           'text-anchor': 'middle',
+           "class": "foo"
+
+
+       }).textPath.animate({ "font-size": "1.9em", }, 1000);
+
+
+       var cx = 500;
+       var cy = 250;
+       var myr = 192;
+
+       console.log("M" + cx + "," + cy + " " +
+           "m" + -myr + ", 0 " +
+           "a" + myr + "," + myr + " 0 1,0 " + myr * 2 + ",0 " +
+           "a" + myr + "," + myr + " 0 1,0 " + -myr * 2 + ",0Z");
+
+
+
+
+
+
+       s.click(function () {
+
+       }).a;
+      
+     
+
+
+   </script>
+    </body>
+</html>

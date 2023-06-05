@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Snap.svg</title>
+        <style>
+        body {
+            background: #333;
+        }
+        </style>
+		<script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+		<script src="d3.min.js"></script>
+        <script src="snap.svg-min.js"></script>
+		<script src="jquery.drawsvg.js"></script>
+		
+    </head>
+    <body>
+        
+<script type="text/javascript">
+var s = Snap(800,800);
+var s = Snap("svg");
+      Snap.load("http://s.cdpn.io/3/kiwi.svg", onSVGLoaded ) ;
+      
+     
+function onSVGLoaded( svg ){ 
+    svg.select(fill='#AD6F6F').animate({fill: "#5D9170"},1000);
+    var circles = svg.select('circle');
+    var rect = svg.select('rect');
+    var text = svg.select('text');
+    rect.animate( { width: 500 }, 1000 );
+    circles.animate({r: 0}, 1000);
+    text.animate({y: -200,x: 150}, 1000);
+    
+    s.append( svg );
+}
+   </script>
+    </body>
+</html>
